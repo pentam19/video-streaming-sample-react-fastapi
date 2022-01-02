@@ -1,0 +1,11 @@
+<!-- index.html -->
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body>
+    <h1>Video Streaming Demonstration</h1>
+    <!-- jinja2のテンプレートの書き方です。/video_feedを呼び出しています。 -->
+    <video controls width="550" src="{{ url_for('stream') }}" />
+  </body>
+</html>

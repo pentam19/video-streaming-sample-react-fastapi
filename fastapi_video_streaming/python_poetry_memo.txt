@@ -1,0 +1,28 @@
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
+poetry new <project-name>
+
+cd <project-name>
+
+poetry install
+
+poetry add <package-name>
+
+---
+poetry add uvicorn
+poetry add jinja2
+poetry add fastapi
+
+fastapi_video_streaming/main.py
+======
+from fastapi import FastAPI
+app = FastAPI()
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+======
+
+poetry run uvicorn fastapi_video_streaming.main:app --reload
+
+curl http://127.0.0.1:8000                                                                                                       {"message":"Hello World"}
+
